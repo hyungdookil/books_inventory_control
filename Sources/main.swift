@@ -8,6 +8,7 @@ HeliumLogger.use()
 // Create a new router
 let router = Router()
 router.add(templateEngine: StencilTemplateEngine())
+router.setDefault(templateEngine: StencilTemplateEngine())
 
 // Handle HTTP GET requests to /
 router.get("/") { request, response, next in
@@ -20,7 +21,7 @@ router.get("/") { request, response, next in
         ]
     ]
 
-    try response.render("main.stencil", context: context).end()
+    try response.render("main", context: context).end()
 }
 
 // Add an HTTP server and connect it to the router
