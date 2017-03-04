@@ -2,8 +2,21 @@ import Kitura
 import HeliumLogger
 import KituraStencil
 
+import Foundation
+import SwiftRedis
+
 // Initialize HeliumLogger
 HeliumLogger.use()
+
+let redis = Redis()
+redis.connect(host: "localhost", port: 6379) { (redisError: NSError?) in
+    if let error = redisError {
+        print(error)
+    }
+    else {
+        print("Connected to Redis.")
+    }
+}
 
 // Create a new router
 let router = Router()
