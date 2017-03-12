@@ -28,3 +28,8 @@ Run the built executable
 ```
 
 Now, open a browser pointing at http://localhost:8090
+
+# ubuntu
+```
+sudo apt-get install clang libssl-dev libcurl4-openssl-dev
+```
